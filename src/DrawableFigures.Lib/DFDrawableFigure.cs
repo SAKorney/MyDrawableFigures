@@ -11,7 +11,6 @@ public abstract class DFDrawableFigure : IDFDrawable
     {
         Style = new(
             FillColor: DFColor.White,
-            IsFilled: false,
             StrokeColor: DFColor.Black,
             StrokeThickness: 1.0
         );

@@ -25,7 +25,6 @@ public partial class MainWindow : Window
             LeftCorner = new DFPoint(10, 10),
             Style = new(
                 FillColor: DFColor.Green,
-                IsFilled: true,
                 StrokeColor: DFColor.Black,
                 StrokeThickness: 10.0
             )
@@ -35,7 +34,6 @@ public partial class MainWindow : Window
             Center = new DFPoint(150, 150),
             Style = new(
                 FillColor: DFColor.Red,
-                IsFilled: true,
                 StrokeColor: DFColor.Blue,
                 StrokeThickness: 3.0
             )
