@@ -5,5 +5,6 @@ namespace DrawableFigures.Lib;
 /// </summary>
 public interface IDFDrawable
 {
+    public DFFigureStyle Style { get; set; }
     void Draw(IDFRender render);
 }

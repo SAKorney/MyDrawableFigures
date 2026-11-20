@@ -19,18 +19,32 @@ public partial class MainWindow : Window
         base.Render(context);
         context.FillRectangle(Brushes.White, new Rect(Bounds.Size));
         AvaloniaRender render = new(context);
+
         var rect = new DFRectangle(100, 100)
         {
-            LeftCorner = new DFPoint(10, 10)
+            LeftCorner = new DFPoint(10, 10),
+            Style = new(
+                FillColor: DFColor.Green,
+                IsFilled: true,
+                StrokeColor: DFColor.Black,
+                StrokeThickness: 10.0
+            )
         };
-        var circle = new DFCircle(10)
+        var circle = new DFCircle(15)
         {
-            Center = new DFPoint(150, 150)
+            Center = new DFPoint(150, 150),
+            Style = new(
+                FillColor: DFColor.Red,
+                IsFilled: true,
+                StrokeColor: DFColor.Blue,
+                StrokeThickness: 3.0
+            )
         };
         var ellipse = new DFEllipse(50, 15)
         {
             Center = new DFPoint(250, 100)
         };
+
         rect.Draw(render);
         circle.Draw(render);
         ellipse.Draw(render);

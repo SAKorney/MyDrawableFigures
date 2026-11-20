@@ -1,23 +1,25 @@
 using Avalonia;
 using Avalonia.Media;
+using DrawableFigures.Avalonia.App;
 using DrawableFigures.Lib;
 
 namespace DrawableFigures.AvaloniaApp;
 
 public class AvaloniaRender(DrawingContext context) : IDFRender
 {
-    private readonly Pen _pen = new Pen(Brushes.Black, 2);
-
     public void Draw(IDFDrawable drawableObject)
     {
+        // Да, это стоит кэшировать, но для примера полагаю достаточно
+        // просто указать на данный момент
+        Pen pen = drawableObject.Style.ToAvaloniaPen();
+        Brush brush = drawableObject.Style.FillColor.ToAvaloniaBrush();
+
         if (drawableObject is DFEllipse ellipse)
         {
             context.DrawEllipse(
-                brush: Brushes.DodgerBlue,
-                pen: _pen,
-                center: new Point(
-                    ellipse.Center.X,
-                    ellipse.Center.Y),
+                brush: brush,
+                pen: pen,
+                center: ellipse.Center.ToAvaloniaPoint(),
                 radiusX: ellipse.RadiusX,
                 radiusY: ellipse.RadiusY);
         }
@@ -29,8 +31,8 @@ public class AvaloniaRender(DrawingContext context) : IDFRender
                 rectangle.Width, rectangle.Height);
 
             context.DrawRectangle(
-                brush: Brushes.MediumSeaGreen,
-                pen: _pen,
+                brush: brush,
+                pen: pen,
                 rect: rect
             );
         }
