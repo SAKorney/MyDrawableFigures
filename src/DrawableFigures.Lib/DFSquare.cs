@@ -3,9 +3,11 @@ using System;
 namespace DrawableFigures.Lib;
 
 /// <summary>
-/// Квадрат (частный случай прямоугольника)
+/// Квадрат
 /// </summary>
 /// <param name="size">Длина стороны</param>
-public class Square(int size) : DFRectangle(size, size)
+public class Square(int size) : DFDrawableFigure
 {
+    public DFPoint LeftCorner { get; set; }
+    public int Size { get; set; } = size;
 }
