@@ -16,10 +16,7 @@ public abstract class DFDrawableFigure : IDFDrawable
         );
     }
 
-    public void Draw(IDFRender render)
-    {
-        render.Draw(this);
-    }
+    public abstract void Draw(IDFRender render);
 }
 
 // TODO: Треугольник - частный случай полигона (замкнутого контура).

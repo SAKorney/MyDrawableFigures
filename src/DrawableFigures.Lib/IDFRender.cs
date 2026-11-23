@@ -6,5 +6,9 @@ namespace DrawableFigures.Lib;
 // Отрисовка реализуется через паттерн Посетитель и двойную диспетчирезацию
 public interface IDFRender
 {
-    void Draw(IDFDrawable drawableObject);
+    void DrawEllipse(DFEllipse ellipse);
+    void DrawCircle(DFCircle circle);
+
+    void DrawRectangle(DFRectangle rectangle);
+    void DrawSquare(DFSquare square);
 }

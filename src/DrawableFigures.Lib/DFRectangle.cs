@@ -10,4 +10,7 @@ public class DFRectangle(int width, int height) : DFDrawableFigure
     public DFPoint LeftCorner { get; set; }
     public int Width { get; set; } = width;
     public int Height { get; set; } = height;
+
+    public override void Draw(IDFRender render)
+        => render.DrawRectangle(this);
 }
